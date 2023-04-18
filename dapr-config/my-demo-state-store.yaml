@@ -1,0 +1,16 @@
+apiVersion: dapr.io/v1alpha1
+kind: PluggableComponent
+metadata:
+  name: dapr-pluggable-state-store-demo
+spec:
+  type: state
+  version: v1
+---
+apiVersion: dapr.io/v1alpha1
+kind: Component
+metadata:
+  name: my-demo-state-store
+spec:
+  type: state.dapr-pluggable-state-store-demo
+  version: v1
+  metadata:
